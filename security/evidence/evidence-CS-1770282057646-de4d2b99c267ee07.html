@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConsentShield - Evidence of Consent</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .evidence-container {
+            max-width: 700px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+        }
+
+        .evidence-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .evidence-header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .evidence-header p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+
+        .evidence-body {
+            padding: 50px;
+        }
+
+        .evidence-item {
+            margin-bottom: 35px;
+        }
+
+        .evidence-label {
+            font-size: 0.9rem;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .evidence-value {
+            font-size: 1.4rem;
+            color: #111827;
+            font-weight: 700;
+            padding: 15px;
+            background: #f3f4f6;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+            word-break: break-word;
+        }
+
+        .hash-value {
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+            background: #1f2937;
+            color: #10b981;
+            padding: 20px;
+            border-radius: 10px;
+            word-break: break-all;
+            line-height: 1.8;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .status-verified {
+            background: #10b981;
+            color: white;
+        }
+
+        .status-blocked {
+            background: #ef4444;
+            color: white;
+        }
+
+        .status-suspicious {
+            background: #f59e0b;
+            color: white;
+        }
+
+        .timestamp-display {
+            font-size: 1.3rem;
+            color: #374151;
+        }
+
+        .footer-note {
+            text-align: center;
+            padding: 30px;
+            background: #f9fafb;
+            color: #6b7280;
+            font-size: 0.95rem;
+            border-top: 2px solid #e5e7eb;
+        }
+
+        .screenshot-ready {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #10b981;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .screenshot-ready {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="evidence-container">
+        <div class="screenshot-ready">📸 Screenshot Ready</div>
+
+        <!-- Header -->
+        <div class="evidence-header">
+            <h1>🛡️ EVIDENCE</h1>
+            <p>Proof of Consent Verification</p>
+        </div>
+
+        <!-- Evidence Body -->
+        <div class="evidence-body">
+            <!-- Status -->
+            <div class="evidence-item">
+                <div class="evidence-label">Status</div>
+                <div class="status-badge status-verified">
+                    ✅ VERIFIED
+                </div>
+            </div>
+
+            <!-- Cryptographic Hash -->
+            <div class="evidence-item">
+                <div class="evidence-label">🔒 SHA-256 Hash (Cryptographic Proof)</div>
+                <div class="hash-value">4e92318310515be512ee53eb3d39238f925bb7df64338df8f82571f56307354b</div>
+            </div>
+
+            <!-- Timestamp -->
+            <div class="evidence-item">
+                <div class="evidence-label">⏰ Timestamp</div>
+                <div class="evidence-value timestamp-display">February 5, 2026 at 02:30:57 PM GMT+5:30</div>
+            </div>
+
+            <!-- Session ID -->
+            <div class="evidence-item">
+                <div class="evidence-label">🆔 Session ID</div>
+                <div class="evidence-value">CS-1770282057646-de4d2b99c267ee07</div>
+            </div>
+
+            <!-- Phrase (Optional - can be hidden for privacy) -->
+            <div class="evidence-item" style="display: none;">
+                <div class="evidence-label">📝 Consent Phrase</div>
+                <div class="evidence-value">I freely give my consent without coercion</div>
+            </div>
+
+            <!-- Trust Score -->
+            <div class="evidence-item">
+                <div class="evidence-label">📊 Trust Score</div>
+                <div class="evidence-value">100 / 100</div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer-note">
+            <p><strong>ConsentShield Verification System</strong></p>
+            <p>This evidence is cryptographically secured and tamper-proof</p>
+            <p style="margin-top: 10px; font-size: 0.85rem;">
+                Generated: February 5, 2026 at 02:30 PM GMT+5:30
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Auto-populate from URL params for demo
+        const urlParams = new URLSearchParams(window.location.search);
+
+        const demoData = {
+            status: urlParams.get('status') || 'VERIFIED',
+            hash: urlParams.get('hash') || 'a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2',
+            timestamp: urlParams.get('timestamp') || new Date().toLocaleString(),
+            session_id: urlParams.get('session_id') || 'CS-' + Date.now(),
+            phrase: urlParams.get('phrase') || 'I freely give my consent',
+            trust_score: urlParams.get('trust_score') || '100'
+        };
+
+        console.log('Evidence Page - Demo Data:', demoData);
+    </script>
+</body>
+
+</html>
